@@ -2,6 +2,10 @@
 - debug:
     msg: "Hello from your external use case!"
 
+- name: Monaco - Add it?
+  include_role:
+    name: monaco-v2
+
 # - name: Monaco - Deploy configuration
 #   include_role:
 #     name: monaco-v2
@@ -17,20 +21,15 @@
 #       AWX_CONTROLLER_TOKEN: "{{ awx_controller_token }}"
 #       AWX_URL: "{{ ingress_protocol }}://ansible.{{ ingress_domain }}/api/v2/"
 
+- include_role:
+    name: k3s
 
-# - block:
-#     - name: Install Kubernetes
-#       include_role:
-#         name: k3s
-#   become: true
-    # become_user: "{{ namespace }}"
+- name: Install dt operator
+  include_role:
+    name: dt-operator
 
-# - name: Install dt operator
-#   include_role:
-#     name: dt-operator
-
-# - include_role:
-#     name: app-easytrade    
+- include_role:
+    name: app-easytrade    
 
 - name: Install Biz Flow App
   ignore_errors: true
