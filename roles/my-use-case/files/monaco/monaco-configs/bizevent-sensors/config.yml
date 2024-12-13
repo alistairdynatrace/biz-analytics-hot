@@ -1,0 +1,11 @@
+configs:
+  - id: http-dotnet
+    config:
+      template: oneagent-feature.json
+      skip: false
+      parameters:
+        featureKey: SENSOR_DOTNET_BIZEVENTS_HTTP_INCOMING
+    type:
+      settings:
+        schema: builtin:oneagent.features
+        scope: environment
