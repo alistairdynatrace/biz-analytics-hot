@@ -71,16 +71,3 @@ configs:
       name: Perform HOT BizAnalytics - H02
       template: perform-hot-h02-workflow.json
       skip: false
-      parameters:
-        configCode:
-          type: file
-          path: retail-config.ts
-        historicalDataCode:
-          type: file
-          path: historical-data.ts
-        generateDataCode:
-          type: file
-          path: generate-new.ts
-        processTemporaryCode:
-          type: file
-          path: process-temporary.ts        
