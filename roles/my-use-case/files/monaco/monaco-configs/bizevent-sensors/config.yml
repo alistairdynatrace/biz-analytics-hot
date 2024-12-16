@@ -71,3 +71,6 @@ configs:
       name: Perform HOT BizAnalytics - H02
       template: perform-hot-h02-workflow.json
       skip: false
+    type:
+      automation:
+        resource: workflow      
