@@ -10,3 +10,15 @@ configs:
       settings:
         schema: builtin:oneagent.features
         scope: environment
+        
+  - id: http-java
+    config:
+      name: http-java
+      template: oneagent-feature.json
+      skip: false
+      parameters:
+        featureKey: SENSOR_JAVA_BIZEVENTS_HTTP_INCOMING
+    type:
+      settings:
+        schema: builtin:oneagent.features
+        scope: environment
