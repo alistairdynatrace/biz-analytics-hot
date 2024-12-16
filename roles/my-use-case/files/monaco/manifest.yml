@@ -3,7 +3,7 @@ manifestVersion: 1.0
 projects:
   - name: bizevent-sensors
     path: monaco-configs/bizevent-sensors
-    type: grouping
+    type: simple
 
 environmentGroups:
   - name: playground
@@ -11,11 +11,11 @@ environmentGroups:
       - name: playground
         url:
           type: environment
-          name: DT_PLATFORM_TENANT_URL
+          value: DT_PLATFORM_TENANT_URL
         auth:
           token:
-            type: environment
-            name: DT_TOKEN
+            # type: environment
+            name: DT_API_TOKEN
           oAuth:
             clientId:
               type: environment
@@ -23,3 +23,4 @@ environmentGroups:
             clientSecret:
               type: environment
               name: DT_OAUTH_CLIENT_SECRET
+
