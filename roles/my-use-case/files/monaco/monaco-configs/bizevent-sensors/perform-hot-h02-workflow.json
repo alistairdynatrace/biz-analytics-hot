@@ -1,0 +1,71 @@
+{
+    "title": "{{ .name }}",
+    "tasks": {
+        "json": {
+            "name": "json",
+            "action": "dynatrace.automations:http-function",
+            "description": "Issue an HTTP request to any API",
+            "input": {
+                "url": "https://<tenant id>.live.dynatrace.com/api/v2/bizevents/ingest",
+                "method": "POST",
+                "headers": {
+                    "content-type": "application/json",
+                    "authorization": "Api-Token <Api token>"
+                },
+                "payload": "{\n    \"event.provider\": \"com.dynatrace.perform\",\n    \"id\": \"1\",\n    \"event.type\": \"api-ingest.json\",\n    \"custom\": \"value\",\n    \"price\": 589.90,\n    \"amount\": 20\n}",
+                "failOnResponseCodes": "400-599"
+            },
+            "active": true,
+            "position": {
+                "x": -1,
+                "y": 1
+            },
+            "predecessors": []
+        },
+        "cloudevent": {
+            "name": "cloudevent",
+            "action": "dynatrace.automations:http-function",
+            "description": "Issue an HTTP request to any API",
+            "input": {
+                "url": "https://<tenant id>.live.dynatrace.com/api/v2/bizevents/ingest",
+                "method": "POST",
+                "headers": {
+                    "content-type": "application/cloudevent+json",
+                    "authorization": "Api-Token <Api token>"
+                },
+                "payload": "{\n    \"specversion\": \"1.0\",\n    \"id\": \"2\",\n    \"source\": \"com.dynatrace.perform\",\n    \"type\": \"api-ingest.cloudevent\",\n    \"data\": {\n        \"paymentId\": \"985985\",\n        \"orderId\": \"789789\"\n    }\n}",
+                "failOnResponseCodes": "400-599"
+            },
+            "position": {
+                "x": 0,
+                "y": 1
+            },
+            "predecessors": []
+        },
+        "cloudevent_batch": {
+            "name": "cloudevent_batch",
+            "action": "dynatrace.automations:http-function",
+            "description": "Issue an HTTP request to any API",
+            "input": {
+                "url": "https://<tenant id>.live.dynatrace.com/api/v2/bizevents/ingest",
+                "method": "POST",
+                "headers": {
+                    "content-type": "application/cloudevent-batch+json",
+                    "authorization": "Api-Token <Api token>"
+                },
+                "payload": "[\n    {\n        \"specversion\": \"1.0\",\n        \"id\": \"3\",\n        \"source\": \"com.dynatrace.perform\",\n        \"type\": \"api-ingest.cloudevent.batch\",\n        \"data\": {\n            \"paymentId\": \"987987\",\n            \"orderId\": \"123123\"\n        }\n    },\n    {\n        \"specversion\": \"1.0\",\n        \"id\": \"4\",\n        \"source\": \"com.dynatrace.perform\",\n        \"type\": \"api-ingest.cloudevent.batch\",\n        \"data\": {\n            \"paymentId\": \"986986\",\n            \"orderId\": \"456456\"\n        }\n    }\n]",
+                "failOnResponseCodes": "400-599"
+            },
+            "position": {
+                "x": 1,
+                "y": 1
+            },
+            "predecessors": []
+        }
+    },
+    "description": "",
+    "ownerType": "USER",
+    "isPrivate": false,
+    "trigger": {},
+    "schemaVersion": 3
+}
