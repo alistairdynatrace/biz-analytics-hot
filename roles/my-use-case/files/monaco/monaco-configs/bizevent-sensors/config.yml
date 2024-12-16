@@ -1,6 +1,7 @@
 configs:
   - id: http-dotnet
     config:
+      name: http-dotnet
       template: oneagent-feature.json
       skip: false
       parameters:
