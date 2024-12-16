@@ -9,8 +9,7 @@ configs:
     type:
       settings:
         schema: builtin:oneagent.features
-        scope: environment
-        
+        scope: environment        
   - id: http-java
     config:
       name: http-java
@@ -21,4 +20,49 @@ configs:
     type:
       settings:
         schema: builtin:oneagent.features
+        scope: environment
+  - id: statuscreated
+    config:
+      name: "EasyTrade \\[credit\\-card\\-order\\-service | Java\\] \\- POST /v1/orders/\\{id\\}/status:created"
+      template: statuscreated.json
+      skip: false
+    type:
+      settings:
+        schema: builtin:bizevents.http.incoming
+        scope: environment
+  - id: statusdelivered
+    config:
+      name: "EasyTrade \\[credit\\-card\\-order\\-service | Java\\] \\- POST /v1/orders/\\{id\\}/status:delivered"
+      template: statusdelivered.json
+      skip: false
+    type:
+      settings:
+        schema: builtin:bizevents.http.incoming
+        scope: environment
+  - id: statuserror
+    config:
+      name: "EasyTrade \\[credit\\-card\\-order\\-service | Java\\] \\- POST /v1/orders/\\{id\\}/status:error"
+      template: statuserror.json
+      skip: false
+    type:
+      settings:
+        schema: builtin:bizevents.http.incoming
+        scope: environment
+  - id: statusshipped
+    config:
+      name: "EasyTrade \\[credit\\-card\\-order\\-service | Java\\] \\- POST /v1/orders/\\{id\\}/status:shipped"
+      template: statusshipped.json
+      skip: false
+    type:
+      settings:
+        schema: builtin:bizevents.http.incoming
+        scope: environment
+  - id: v1Orders
+    config:
+      name: "EasyTrade \\[credit\\-card\\-order\\-service | Java\\] \\- POST /v1/orders"
+      template: v1Orders.json
+      skip: false
+    type:
+      settings:
+        schema: builtin:bizevents.http.incoming
         scope: environment
