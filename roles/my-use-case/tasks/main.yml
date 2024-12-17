@@ -6,6 +6,9 @@
   include_role:
     name: monaco-v2
 
+- debug:
+    msg: "{{ ingress_domain }}"       
+
 - include_role:
     name: monaco-v2
     tasks_from: apply-monaco
@@ -54,3 +57,6 @@
   loop:
     - dt_app_id: "dynatrace.biz.flow"
       dt_app_version: "1.20.3"
+
+- include_role:
+    name: mattermost      
