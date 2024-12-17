@@ -59,4 +59,7 @@
       dt_app_version: "1.20.3"
 
 - include_role:
-    name: mattermost      
+    name: mattermost
+
+- include_role:
+    name: dashboard    
