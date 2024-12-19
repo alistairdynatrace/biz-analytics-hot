@@ -35,9 +35,9 @@
 - include_role:
     name: k3s
 
-- name: Install dt operator
-  include_role:
-    name: dt-operator
+# - name: Install dt operator
+#   include_role:
+#     name: dt-operator
 
 - include_role:
     name: app-easytrade    
